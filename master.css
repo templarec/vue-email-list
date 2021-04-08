@@ -41,12 +41,15 @@ li  {
 	padding: 10px 5px;
 	border-radius: 20px;
 	margin-right: 20px;
-	animation-name: comparsa;
-	animation-duration: 5s;
+}
+.anime {
 
+	animation-name: comparsa;
+	animation-duration: 10s;
+	animation-fill-mode: forwards;
 }
 @keyframes comparsa {
-	from {box-shadow: none;}
-	to {box-shadow: 3px 3px 10px #000;}
+	from {box-shadow: none; background-color: transparent;}
+	to {box-shadow: 5px 5px 5px #000; background-color: moccasin;}
 
 }

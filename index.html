@@ -25,14 +25,14 @@
 			Genera e-mail
 		</button>
 		<div class="liste">
-			<div class="prima">
+			<div :class="(emailArray.length > 0)? 'prima anime' : 'prima'"> <!-- assegno classe anime quando arrivano i dati-->
 				<h3>Lista</h3>
 				<ol id="lista"></ol>
 			</div>
-			<div class="seconda">
+			<div :class="(emailArray.length == lunghezza)? 'seconda anime' : 'seconda'"> <!--assegno classe anime quando arrivano i dati-->
 				<h3>Lista bonus</h3>
 				<ol>
-					<li v-for="email in emailArray" v-if="emailArray.length == lunghezza">{{email}}</li>
+					<li v-for="email in emailArray" v-if="emailArray.length == lunghezza">{{email}}</li> <!-- mostro solo quando array è pieno-->
 				</ol>
 			</div>
 		</div>
