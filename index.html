@@ -13,13 +13,32 @@
 	<!-- Google fonts cdn -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-	<!-- My custom style -->
-	<link rel="stylesheet" href="./master.css">
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<link rel="stylesheet" href="./master.css">
+	<title>Email with Vue & Axios</title>
 </head>
 <body>
-
+	<div id="root">
+		<h3>Numero di email da generare:</h3>
+		<input v-model="lunghezza" type="number">
+		<button @click="generate(lunghezza)">
+			Genera e-mail
+		</button>
+		<div class="liste">
+			<div class="prima">
+				<h3>Lista</h3>
+				<ol id="lista"></ol>
+			</div>
+			<div class="seconda">
+				<h3>Lista bonus</h3>
+				<ol>
+					<li v-for="email in emailArray" v-if="emailArray.length == lunghezza">{{email}}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+<!-- axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 <!-- Vue cdn development -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 <!-- My custom JS script -->
